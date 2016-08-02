@@ -3,43 +3,9 @@ import java.util.Random;
 
 
     /**
-   An implementation of RSA using big integers.
-   <p>
-   Algorithm: 
-   <ul>
-    <li>Generate two large prime numbers p and q
-    <li>Let n = p * q
-    <li>Let m = (p-1) * (q-1)
-    <li>Choose a small number e, coprime to m, i.e., gcd(e,m) = 1
-    <li>Find d such that for some i, d = (i * m + 1) / e is an integer 
-    <li>Publish e and n as public key
-    <li>Keep d and n as the private key
-    <li>To encrypt P calculate P^e % n
-    <li>To decrypt C calculate C^d % n
-   </ul>
-    A tiny example...
-   <ul>
-    <li>p = 7 and q = 19
-    <li>n = 133
-    <li>m = 108
-    <li>Loop starting with e=2:
-         <ul>
-         <li>gcd(2,108) = 2 -- no
-         <li>gcd(3,108) = 3 -- no
-         <li>gcd(4,108) = 4 -- no
-         <li>gcd(5,108) = 1 -- yes
-         </ul>
-      e=5
-    <li>d = 65
-    <li>Public key n = 133, e = 5
-    <li>Private key n = 133, d = 65
-    <li>Encrypt 6 ==> 6^5 % 133 = 62
-    <li>Decrypt 62 ==> 62^65 % 133 = 6
-    </ul>
-    */
-    public class RSAKeys {
-	//---------------------------------------------------------------------
-	// Static 
+   An implementation of RSA using big int.
+   */
+   public class RSAKeys {
 	/**
        Takes a message and a public key and encrypts the message using that
        public key. For simplicity our messages are represented as an array of
